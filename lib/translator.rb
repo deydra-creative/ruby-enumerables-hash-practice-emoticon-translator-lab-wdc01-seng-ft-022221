@@ -10,8 +10,8 @@ def load_library
 end
 
 def get_japanese_emoticon
-   library = load_library(filepath)
-   japanese_emoji = "Sorry, that emoticon was not found"
+  emoticon_hash = load_library(file_path)
+  japanese_emoji = "Sorry, that emoticon was not found"
   emoticon_hash.each do |name, lang_hash|
     if emoticon == lang_hash[:english] 
         japanese_emoji = lang_hash[:japanese]
