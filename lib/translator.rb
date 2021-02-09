@@ -1,7 +1,12 @@
 # require modules here
 
 def load_library
-  # code goes here
+  library = YAML.load_file(filepath)
+  lang_keys = [:english, :japanese]
+  library.map do |meaning, emoticons| 
+    library[meaning] = Hash[lang_keys.zip(emoticons)]
+  end 
+  library
 end
 
 def get_japanese_emoticon
